@@ -1,21 +1,16 @@
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import ExploreContainer from '../components/ExploreContainer';
+import PageHeader from '../components/PageHeader';
+//import { ProductStore } from '../data/ProductStore';
 import './Tab1.css';
 
 const Tab1: React.FC = () => {
+  //const products:any = ProductStore.useState(s => s.products);
+	//console.log(products);
   return (
     <IonPage>
-      <IonHeader>
-        <IonToolbar>
-          <IonTitle>Tab 1</IonTitle>
-        </IonToolbar>
-      </IonHeader>
+      <PageHeader name="Products"></PageHeader>
       <IonContent fullscreen>
-        <IonHeader collapse="condense">
-          <IonToolbar>
-            <IonTitle size="large">Tab 1</IonTitle>
-          </IonToolbar>
-        </IonHeader>
         <ExploreContainer name="Tab 1 page" />
       </IonContent>
     </IonPage>

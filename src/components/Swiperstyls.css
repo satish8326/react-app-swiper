@@ -1,0 +1,18 @@
+/* Make sure pagination bullets are visible */
+.swiper-pagination {
+  bottom: 10px;  /* Adjust position of the pagination */
+}
+
+.swiper-pagination-bullet {
+  background: red;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  opacity: 1;
+  transition: width 0.3s ease;  /* For smooth transitions */
+}
+
+.swiper-pagination-bullet-active {
+  background-color: blue;
+  width: 5rem; /* Active bullet width */
+}
