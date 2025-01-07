@@ -45,10 +45,16 @@ import '@ionic/react/css/palettes/dark.system.css';
 
 /* Theme variables */
 import './theme/variables.css';
+import { fetchData } from './data/fetcher';
+import { useEffect } from 'react';
 
 setupIonicReact();
 
-const App: React.FC = () => (
+const App: React.FC = () => {
+  useEffect(() => {
+		fetchData();
+	}, []);
+  return (
   <IonApp>
     <IonReactRouter>
       <IonTabs>
@@ -90,6 +96,6 @@ const App: React.FC = () => (
       </IonTabs>
     </IonReactRouter>
   </IonApp>
-);
+)};
 
 export default App;
