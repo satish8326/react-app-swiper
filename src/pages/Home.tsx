@@ -40,7 +40,9 @@ const Home: React.FC = () => {
 						})}
 					</IonRow>
 				</IonGrid>
+        <IonCard>
         <SwiperData items={products} isImages={true}></SwiperData>
+        </IonCard>
       {/* <SwiperData1 items={products}></SwiperData1>
       <IonCard>
      
