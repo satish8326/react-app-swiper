@@ -8,7 +8,7 @@ interface ContainerProps {
 const PageHeader: React.FC<ContainerProps> = ({ name }) => {
   return (
     <IonHeader>
-        <IonToolbar>
+        <IonToolbar className='ion-header-colr'>
           <Searchbar name="name"></Searchbar>
           {/* <IonTitle class="ion-text-center" style={{marginTop:"10px"}} className='ion-header-colr'>Location Info</IonTitle> */}
         </IonToolbar>

@@ -11,6 +11,7 @@ import {
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import { ellipse, square, triangle, homeOutline } from 'ionicons/icons';
+import { StatusBar } from '@capacitor/status-bar';
 import Tab1 from './pages/Tab1';
 import Tab2 from './pages/Tab2';
 import Tab3 from './pages/Tab3';
@@ -45,10 +46,29 @@ import '@ionic/react/css/palettes/dark.system.css';
 
 /* Theme variables */
 import './theme/variables.css';
+import { useEffect } from 'react';
 
 setupIonicReact();
 
-const App: React.FC = () => (
+const App: React.FC = () => {
+  useEffect(() => {
+    const setStatusBar = async () => {
+      // Set status bar style to light content
+      ///await StatusBar.setStyle({ style: 'LIGHT' });
+
+      // Set background color
+      await StatusBar.setBackgroundColor({ color: '#3880ff' });
+
+      // Optionally, hide the status bar
+      // await StatusBar.hide();
+      
+      // Show the status bar again (if hidden)
+      // await StatusBar.show();
+    };
+
+    setStatusBar();
+  }, []);
+  return (
   <IonApp>
     <IonReactRouter>
       <IonTabs>
@@ -90,6 +110,7 @@ const App: React.FC = () => (
       </IonTabs>
     </IonReactRouter>
   </IonApp>
-);
+  )
+};
 
 export default App;
