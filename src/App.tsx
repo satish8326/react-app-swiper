@@ -46,28 +46,16 @@ import '@ionic/react/css/palettes/dark.system.css';
 
 /* Theme variables */
 import './theme/variables.css';
+import { fetchData } from './data/fetcher';
+import  CategoryProducts from './pages/CategoryProducts'
 import { useEffect } from 'react';
 
 setupIonicReact();
 
 const App: React.FC = () => {
   useEffect(() => {
-    const setStatusBar = async () => {
-      // Set status bar style to light content
-      ///await StatusBar.setStyle({ style: 'LIGHT' });
-
-      // Set background color
-      await StatusBar.setBackgroundColor({ color: '#3880ff' });
-
-      // Optionally, hide the status bar
-      // await StatusBar.hide();
-      
-      // Show the status bar again (if hidden)
-      // await StatusBar.show();
-    };
-
-    setStatusBar();
-  }, []);
+		fetchData();
+	}, []);
   return (
   <IonApp>
     <IonReactRouter>
@@ -88,6 +76,9 @@ const App: React.FC = () => {
           <Route exact path="/">
             <Redirect to="/home" />
           </Route>
+          <Route path="/category/:slug" exact>
+						<CategoryProducts />
+					</Route>
         </IonRouterOutlet>
         <IonTabBar slot="bottom">
         <IonTabButton tab="home" href="/home">
@@ -110,7 +101,6 @@ const App: React.FC = () => {
       </IonTabs>
     </IonReactRouter>
   </IonApp>
-  )
-};
+)};
 
 export default App;

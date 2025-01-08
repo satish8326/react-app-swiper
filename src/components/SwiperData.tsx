@@ -25,14 +25,13 @@ export const SwiperData: React.FC<ContainerProps> = ({ items, isImages }) => {
                   onSwiper={(swiper) => console.log(swiper)}
                   onSlideChange={() => console.log('slide change')}
                   slidesPerView={1}>
-                  {items.map((Item) => (
+                  {items.map((Item:any) => (
                     <SwiperSlide style={{ width: '100%', height: '100%' }}>
-                      <IonCard>
-                        <IonImg src={Item.imageUrl} />
+                      
+                        <IonImg src={Item.cover} />
                         {/* <IonCardContent style={{  backgroundColor: 'skyblue', color: '#FFF' }}>
                           <IonText>{Item.name}</IonText>
                         </IonCardContent> */}
-                      </IonCard>
                     </SwiperSlide>
                   ))}
                   </Swiper>
