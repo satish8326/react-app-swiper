@@ -46,6 +46,7 @@ import '@ionic/react/css/palettes/dark.system.css';
 /* Theme variables */
 import './theme/variables.css';
 import { fetchData } from './data/fetcher';
+import  CategoryProducts from './pages/CategoryProducts'
 import { useEffect } from 'react';
 
 setupIonicReact();
@@ -74,6 +75,9 @@ const App: React.FC = () => {
           <Route exact path="/">
             <Redirect to="/home" />
           </Route>
+          <Route path="/category/:slug" exact>
+						<CategoryProducts />
+					</Route>
         </IonRouterOutlet>
         <IonTabBar slot="bottom">
         <IonTabButton tab="home" href="/home">
